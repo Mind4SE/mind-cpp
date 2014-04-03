@@ -92,10 +92,17 @@ private:
 	<endif>
 	<endif>
 	//data
-	struct internal_data {
-		//FIXME put internal data here
-	};
-	internal_data PRIVATE;
+	<if (definition.astNodeTypes.("data"))>
+	<if (definition.data)>
+	<if (definition.data.cCode)>
+protected:
+	/* Start inlined data code */
+	<definition.data.astSource; format="sourceTo#line">
+	<definition.data.cCode>
+	/* End inlined data code */
+	<endif>
+	<endif>
+	<endif>
 public:
 	<if (definition.interfaces)>
 	<if (definition.astDecorations.("serverItfInstances"))>

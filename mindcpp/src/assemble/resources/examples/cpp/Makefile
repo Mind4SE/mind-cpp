@@ -100,14 +100,14 @@ endif
 extraOptionsArg=
 ifdef extraOptions
 	ifneq ($(extraOptions), "")
-		extraOptionsArg="$(extraOptions)"
+		extraOptionsArg=$(extraOptions)
 	endif
 endif
 
 testExtraOptionsArg=
 ifdef testExtraOptions
 	ifneq ($(testExtraOptions), "")
-		testExtraOptionsArg="$(testExtraOptions)"
+		testExtraOptionsArg=$(testExtraOptions)
 	endif
 endif
 

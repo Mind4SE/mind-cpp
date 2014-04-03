@@ -3,7 +3,7 @@
 
 void inputItf::increment(uint32_t input)
 {
-    printf("receive on increment %d\n", input);
+    printf("receive on increment %d\n", PRIVATE.toto/*input*/);
 }
 
 void inputItf::twice(uint32_t input)

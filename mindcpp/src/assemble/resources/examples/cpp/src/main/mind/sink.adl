@@ -1,5 +1,9 @@
 primitive sink {
     provides api.uniop	as inputItf;
-    
+    data {{
+    	struct {
+    		int toto;
+    	} PRIVATE;
+    }};
     source sink.cpp;
 }
