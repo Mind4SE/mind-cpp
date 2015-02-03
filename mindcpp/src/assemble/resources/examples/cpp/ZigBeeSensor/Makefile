@@ -35,12 +35,8 @@ ifneq (,$(findstring Windows, $(OS))) # Handle Windows-specific separators (':' 
     PATH_SEPARATOR =;
 endif
 
-# OS-dependent link library path
-ifneq (,$(findstring Windows, $(OS)))
-	ldFlags+=-L./libs/win32
-else 
-	ldFlags+=-L./libs/linux
-endif
+# link library path
+ldFlags+=-L./libs
 
 sourcePathArg=
 ifdef sourcePath

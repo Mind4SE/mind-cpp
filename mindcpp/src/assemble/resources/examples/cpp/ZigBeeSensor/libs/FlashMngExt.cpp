@@ -30,9 +30,9 @@
 using namespace std;
  
 void FlashMngExt::WriteByte(int address, int byte) {
-	cout << "Write" << byte << "bytes" << "at address " << address; 
+	cout << "Write " << byte << " bytes" << " at address " << address << "\n"; 
 }
 
 void FlashMngExt::ReadByte(int address, int *byte) {
-	cout << "Read" << *byte << "bytes" << "at address " << address;
+	cout << "Read " << *byte << " bytes" << " at address " << address << "\n";
 }
