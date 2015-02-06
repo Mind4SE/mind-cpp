@@ -20,17 +20,19 @@
  * Contributors: 
  */
 
-#ifndef FLASHMNGEXT_HPP_
-#define FLASHMNGEXT_HPP_
+ // This code represents legacy code.
+ // This legacy code can be some source code or a library (.a;.so;.lib;.dll)
+ 
+#include <stdio.h>
+#include <iostream>
+#include "FlashMngExt.hpp"
 
+using namespace std;
+ 
+void FlashMngExt::WriteByte(int address, int byte) {
+	cout << "Write " << byte << " bytes" << " at address " << address << "\n"; 
+}
 
-class FlashMngExt {
-public:
-    FlashMngExt() {};
-	~FlashMngExt() {};
-	void WriteByte(int address, int byte);
-	void ReadByte(int address, int *byte);
-};
-
-
-#endif /* FLASHMNGEXT_HPP_ */
+void FlashMngExt::ReadByte(int address, int *byte) {
+	cout << "Read " << *byte << " bytes" << " at address " << address << "\n";
+}
