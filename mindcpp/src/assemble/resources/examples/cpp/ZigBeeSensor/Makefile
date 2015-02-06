@@ -132,7 +132,10 @@ clean: clean_dependencies clean_compile clean_graph clean_doc clean_test
 dependencies: build_dependencies
 # Add 'cp' commands here to copy your project dependencies files to depsOutputDir
 
-compile: build 
+libs:
+	$(MAKE) -C libs all
+
+compile: build libs
 ifdef targetComponent
 	@if test ! -x $(MINDC) && ! (which $(MINDC) 2>&1)>/dev/null ; \
 		then echo ' Mindc not found! Set MIND_ROOT environment variable or set 'Mindc location' in Preference page of Eclipse' && exit 1 ; \
@@ -206,4 +209,4 @@ clean_graph:
 	@rm -Rf $(graphOutputDir); \
 	mkdir -p $(graphOutputDir)
 
-.PHONY: all dependencies compile graph doc test clean clean_dependencies clean_compile clean_doc clean_test clean_graph build build_dependencies build_doc build_test build_graph
+.PHONY: all dependencies libs compile graph doc test clean clean_dependencies clean_compile clean_doc clean_test clean_graph build build_dependencies build_doc build_test build_graph
